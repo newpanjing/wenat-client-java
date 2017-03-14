@@ -1,4 +1,4 @@
-package com.wezoz.nat;
+package cn.wenat;
 
 import io.socket.emitter.Emitter.Listener;
 

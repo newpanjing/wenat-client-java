@@ -1,4 +1,4 @@
-package com.wezoz.nat;
+package cn.wenat;
 
 import java.sql.Time;
 import java.util.HashMap;
@@ -14,9 +14,9 @@ import org.json.JSONException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.wezoz.nat.form.MainForm;
-import com.wezoz.nat.utils.HttpClientUtils;
 
+import cn.wenat.form.MainForm;
+import cn.wenat.utils.HttpClientUtils;
 import io.socket.client.IO;
 import io.socket.client.IO.Options;
 import io.socket.client.Socket;
@@ -239,7 +239,7 @@ public class LocalServer {
 					 response = HttpClientUtils.post(post, params);
 				}else {
 					//其他的全部postBody
-					response = HttpClientUtils.postBody(post, request.getString("params"), encoding);
+					response = HttpClientUtils.postBody(post, request.getString("body"), encoding);
 				}
 			} catch (Exception e) {
 				response = new Response();

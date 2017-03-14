@@ -2,14 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.wezoz.nat</groupId>
-	<artifactId>wezoz-nat-client</artifactId>
+	<groupId>com.wenat</groupId>
+	<artifactId>wenat-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>wezoz-nat-client</name>
+	<name>wenat-client</name>
 	<url>https://www.wezoz.com</url>
-
+	<description>
+		wenat.cn 这个域名没备案，.com的域名将就用吧～
+	</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>

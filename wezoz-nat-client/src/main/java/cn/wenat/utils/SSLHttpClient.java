@@ -1,4 +1,4 @@
-package com.wezoz.nat.utils;
+package cn.wenat.utils;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;

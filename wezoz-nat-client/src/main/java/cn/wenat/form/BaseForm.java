@@ -1,4 +1,4 @@
-package com.wezoz.nat.form;
+package cn.wenat.form;
 
 import java.awt.Color;
 import java.awt.event.WindowAdapter;

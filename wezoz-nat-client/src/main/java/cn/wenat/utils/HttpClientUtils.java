@@ -1,4 +1,4 @@
-package com.wezoz.nat.utils;
+package cn.wenat.utils;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -48,7 +48,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import com.alibaba.fastjson.JSON;
-import com.wezoz.nat.Response;
+
+import cn.wenat.Response;
 
 /**
  * http请求工具 httpclient4.5
@@ -205,7 +206,9 @@ public class HttpClientUtils {
 	public static Response postBody(HttpPost httpPost, String body,String encoding) {
 		Response res = null;
 		try {
-			httpPost.setEntity(new StringEntity(body, encoding));
+			StringEntity entity=new StringEntity(body,encoding);
+//			entity.setContentType(httpPost.getFirstHeader("content-type"));
+			httpPost.setEntity(entity);
 			CloseableHttpResponse response = getClient().execute(httpPost);
 			res = getContent(response);
 		} catch (Exception e) {

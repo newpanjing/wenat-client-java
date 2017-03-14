@@ -1,4 +1,4 @@
-package com.wezoz.nat.form;
+package cn.wenat.form;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-import com.wezoz.nat.CallListener;
-import com.wezoz.nat.LocalServer;
+import cn.wenat.CallListener;
+import cn.wenat.LocalServer;
 
 public class MainForm extends BaseForm {
 
@@ -73,7 +73,7 @@ public class MainForm extends BaseForm {
 					try {
 						String host = txtHost.getText();
 						server = new LocalServer();
-						server.setServer("http://wezoz.com:3001");
+						server.setServer("http://127.0.0.1:3001");
 						server.setForward(host);
 						server.setDomain(txtDomain.getText());
 						server.setCallListener(new CallListener() {

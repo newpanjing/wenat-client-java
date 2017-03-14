@@ -1,4 +1,4 @@
-package com.wezoz.nat;
+package cn.wenat;
 
 import java.io.Serializable;
 import java.util.Map;
