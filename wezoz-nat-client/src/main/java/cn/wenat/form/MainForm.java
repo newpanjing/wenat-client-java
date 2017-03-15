@@ -50,10 +50,8 @@ public class MainForm extends BaseForm {
 	private JLabel label_3;
 
 	private JLabel lblSpeed;
-	private JLabel lblPing;
-	
 	public MainForm() {
-		setTitle("Wezoz NAT");
+		setTitle("WeNAT-HTTP内网穿透");
 		this.setSize(546, 432);
 		setLocationRelativeTo(null);
 
@@ -73,7 +71,7 @@ public class MainForm extends BaseForm {
 					try {
 						String host = txtHost.getText();
 						server = new LocalServer();
-						server.setServer("http://127.0.0.1:3001");
+						server.setServer("http://wezoz.com:3001");
 						server.setForward(host);
 						server.setDomain(txtDomain.getText());
 						server.setCallListener(new CallListener() {
@@ -104,7 +102,7 @@ public class MainForm extends BaseForm {
 							@Override
 							public void speedCall(long speed) {
 								lblSpeed.setText(formatNumber(speed)+"/s");
-								
+
 							}
 
 							@Override
@@ -172,11 +170,11 @@ public class MainForm extends BaseForm {
 		lblSpeed = new JLabel("0KB");
 		lblSpeed.setBounds(199, 92, 73, 16);
 		panelSetting.add(lblSpeed);
-		
+
 		JLabel label_4 = new JLabel("延迟：");
 		label_4.setBounds(305, 92, 39, 16);
 		panelSetting.add(label_4);
-		
+
 		lblPing = new JLabel("0ms");
 		lblPing.setBounds(342, 92, 123, 16);
 		panelSetting.add(lblPing);
@@ -184,7 +182,7 @@ public class MainForm extends BaseForm {
 		txtConsole = new JTextArea() {
 
 			/**
-			 * 
+			 *
 			 */
 			private static final long serialVersionUID = 8749801166570350982L;
 
@@ -198,7 +196,7 @@ public class MainForm extends BaseForm {
 				super.append(str);
 			}
 		};
-		txtConsole.setText("准备就绪\n");
+		txtConsole.setText("官方网站:https://www.wezoz.com\n");
 		txtConsole.setBounds(19, 181, 437, 129);
 		panelConsole = new JScrollPane(txtConsole, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		panelConsole.setLocation(20, 210);
@@ -214,6 +212,30 @@ public class MainForm extends BaseForm {
 			}
 		});
 		change();
+		//打开网站
+		openBrowser();
+	}
+
+	private JLabel lblPing;
+
+	private void openBrowser(){
+		if(java.awt.Desktop.isDesktopSupported()){
+			try{
+				//创建一个URI实例,注意不是URL
+				java.net.URI uri=java.net.URI.create("https://www.wezoz.com");
+				//获取当前系统桌面扩展
+				java.awt.Desktop dp=java.awt.Desktop.getDesktop();
+				//判断系统桌面是否支持要执行的功能
+				if(dp.isSupported(java.awt.Desktop.Action.BROWSE)){
+					//获取系统默认浏览器打开链接
+					dp.browse(uri);
+				}
+			}catch(java.lang.NullPointerException e){
+				//此为uri为空时抛出异常
+			}catch(java.io.IOException e){
+				//此为无法获取系统默认浏览器
+			}
+		}
 	}
 
 	private String formatNumber(long traffic) {
