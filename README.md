@@ -1,6 +1,6 @@
 # WeNat client for java
 ## 下载地址
-> https://github.com/newpanjing/wenat-client-java/release
+> https://github.com/newpanjing/wenat-client-java/releases
 
 > WeNAT是一个穿透内网的工具，利用wezoz的服务器，和本地电脑，建立一条专属的通道，并将外网的请求转发到本地，从而实现穿透。
 > 常见应用：支付接口回调调试、微信接口、个人电脑搭建网站
